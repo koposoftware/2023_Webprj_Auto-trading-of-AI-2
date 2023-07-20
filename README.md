@@ -38,9 +38,11 @@
 
 ## 발표 ppt
 
-<img src="ppt.png"/>[발표자료](https://www.notion.so/project.pptx)<br>
+<img src="ppt.png"/>[발표자료]([https://www.notion.so/project.pptx](https://docs.google.com/presentation/d/1FoTpzd-xsLPuqLvlBeQwik3hS03Dmk7V/edit?usp=sharing&ouid=110145640305960539559&rtpof=true&sd=true)https://docs.google.com/presentation/d/1FoTpzd-xsLPuqLvlBeQwik3hS03Dmk7V/edit?usp=sharing&ouid=110145640305960539559&rtpof=true&sd=true)<br>
 
 ## 시연 동영상
-[![Video Label](https://www.youtube.com/watch?v=N7XwpZdp87A
 [![Video Label](http://img.youtube.com/vi/N7XwpZdp87A/ppt.png)](https://youtu.be/N7XwpZdp87A)
 <br>
+
+## 느낀 점
+팀 개발 프로젝트에서 협업과 소통의 중요성을 알게 되었습니다. 각자 개발하는 것은 각자의 생각에 순조롭다고 느꼈으나, 디테일한 부분에서 각자가 생각하는 부분이 다르게 생각할 수 있고, 개발한 기능을 합치는 과정에서 충돌을 수정하는 것이 시간이 많이 소요되었습니다. 약간은 번거롭더라도 대면 소통과 코드의 주석 등을 통해 생각하는 것을 정확히 전달하는 것이 굉장히 중요하다는 것을 배웠습니다. 서비스의 요구사항부터 개발, 산출물 작성까지 약소하게나마 전체의 과정을 모두 경험한 것이 앞으로의 개발 경험에 큰 도움이 될 것 같아서 각자가 개발한 것을 공유하고 피드백을 할 계획입니다.
