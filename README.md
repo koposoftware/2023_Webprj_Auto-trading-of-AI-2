@@ -37,11 +37,11 @@
 <img src="systemarchitecture.png"/><br>
 
 ## 발표 ppt
-
-<img src="ppt.png"/>[발표자료]([https://www.notion.so/project.pptx](https://docs.google.com/presentation/d/1FoTpzd-xsLPuqLvlBeQwik3hS03Dmk7V/edit?usp=sharing&ouid=110145640305960539559&rtpof=true&sd=true)https://docs.google.com/presentation/d/1FoTpzd-xsLPuqLvlBeQwik3hS03Dmk7V/edit?usp=sharing&ouid=110145640305960539559&rtpof=true&sd=true)<br>
+[발표](./발표.pdf)
+<br>
 
 ## 시연 동영상
-[![Video Label](http://img.youtube.com/vi/N7XwpZdp87A/ppt.png)](https://youtu.be/N7XwpZdp87A)
+[![Video Label](http://img.youtube.com/vi/N7XwpZdp87A/0.jpg)](https://youtu.be/N7XwpZdp87A)
 <br>
 
 ## 느낀 점
