@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'Hana2-Bold';
+    src: url("../assets/Fonts/Hana2.0_OTF/Hana2-Bold.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Hana2-CM';
+    src: url("../assets/Fonts/Hana2.0_OTF/Hana2-CM.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Hana2-Heavy';
+    src: url("../assets/Fonts/Hana2.0_OTF/Hana2-Heavy.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Hana2-Light';
+    src: url("../assets/Fonts/Hana2.0_OTF/Hana2-Light.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Hana2-Medium';
+    src: url("../assets/Fonts/Hana2.0_OTF/Hana2-Medium.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Hana2-Regular';
+    src: url("../assets/Fonts/Hana2.0_OTF/Hana2-Regular.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+

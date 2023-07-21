@@ -1,0 +1,23 @@
+@import url("fonts.css");
+
+.submit-port-button {
+  font-family: "Hana2-Bold";
+  font-size: 24px;
+  color: #ffffff;
+  border-radius: 20px;
+  width: 300px;
+  height: 80px;
+  border: 1px solid #03847e;
+  background-color: #03847e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.submit-port-button:active {
+  transform: translateY(3px); /* 클릭 시 눌린 효과 */
+  /* 추가 효과를 적용하세요 */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+  /* 다른 스타일 변경 등 */
+}

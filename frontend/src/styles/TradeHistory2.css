@@ -1,0 +1,133 @@
+@import url("fonts.css");
+
+.tradehistory-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.tradehistory-inner-container {
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    width: 1150px;
+    height: 800px;
+    max-height: 800px;
+    border: 1px solid #32b09d;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+
+.trade-history {
+    font-family: "Hana2-Bold";
+    font-size: 40px;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+    width:1150px;
+    max-width: 1150px;
+}
+
+.search-option {
+    display: flex;
+    align-items: center;
+}
+
+.search-date {
+    margin-right: 10px;
+}
+
+.search-date button {
+    font-family: "Hana2-Bold";
+    margin-right: 5px;
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: ghostwhite;
+    color: black;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.search-date button:hover {
+    background-color: black;
+    color : white;
+}
+
+.search-date button:focus {
+    outline: none;
+    color : white;
+    background-color: dimgray;
+}
+
+.search-position select {
+    padding: 8px;
+    font-size: 14px;
+}
+
+.search-stock input {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width : 200px;
+    height : 15px;
+}
+
+.search-stock input:focus {
+    outline: none;
+    border-color: #4c9aff;
+}
+.search-option{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.table-container {
+    max-height: 700px;
+    overflow: auto;
+}
+
+.trade-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.trade-table th{
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-family: "Hana2-Bold";
+    font-size: 30px;
+    position: sticky;
+    top: 0;
+    background-color:#32b09d;
+    z-index: 1;
+    color : white;
+}
+
+.trade-table td {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    font-family: "Hana2-Bold";
+    font-size: 15px;
+}
+
+.trade-history-title {
+    text-align: center;
+    font-size: 50px;
+}
+
+.trade-table .buy-position {
+    color: red;
+}
+
+.trade-table .sell-position {
+    color: blue;
+}

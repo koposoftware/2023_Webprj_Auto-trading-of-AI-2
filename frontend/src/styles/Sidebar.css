@@ -1,0 +1,16 @@
+@import url("fonts.css");
+
+.sidebar-container {
+  display: flex;
+  max-width: 1440px;
+  height: 100vh;
+}
+
+.sidebar {
+  border-right: 1px solid;
+  border-color: #32b09d;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+}

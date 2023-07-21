@@ -1,0 +1,85 @@
+@import url("fonts.css");
+
+.start-container {
+  width: 1440px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  position: absolute;
+  top: 0;
+}
+.start-login-button {
+  font-family: "Hana2-Bold";
+  font-size: 24px;
+  color: #ffffff;
+  border-radius: 20px;
+  width: 300px;
+  height: 80px;
+  border: 1px solid #03847e;
+  background-color: #03847e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.start-login-button:active {
+  transform: translateY(3px); /* 클릭 시 눌린 효과 */
+  /* 추가 효과를 적용하세요 */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* 그림자 효과 */
+  /* 다른 스타일 변경 등 */
+}
+
+.box {
+  font-family: "Hana2-Bold";
+  font-size: 64px;
+  color: white;
+  /* border-radius: 20px; */
+  width: 100%;
+  height: 780px;
+  border: 1px solid #029490;
+  background-color: #029490;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  animation: fade-in 2.5s ease forwards; /* fade-in 애니메이션 적용 */
+  opacity: 0; /* 초기에 투명하게 설정 */
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.button {
+  font-family: "Hana2-Bold";
+  font-size: 24px;
+  color: #ffffff;
+  border-radius: 20px;
+  width: 300px;
+  height: 80px;
+  border: 1px solid #03847e;
+  background-color: #03847e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-to-register {
+  font-size: 14px;
+  color: #a9a7a7;
+  cursor: pointer;
+  margin-top: 5px;
+}
+.link-to-register :active {
+  font-size: 14px;
+  color: #a9a7a7;
+}

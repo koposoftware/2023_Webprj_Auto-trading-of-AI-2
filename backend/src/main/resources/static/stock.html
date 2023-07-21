@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>하나금융그룹</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Header Start -->
+        <div class="renewal2021">
+            <div class="upper">
+                <ul class="link_crfix">
+                    <li class="item">기업뱅킹</li>
+                    <li class="item">하나증권</li>
+                    <li class="item">은행소개</li>
+                    <li class="item">채용안내</li>
+                </ul>
+            </div>
+
+            <div class="menu">
+                <a href="../index.html" style="justify-content: center;">
+                    <img src="./img/Hana.jpg"
+                        style="max-width: 300px; height: auto; margin-top: 20px; margin-left: 30px;">
+                </a>
+
+                <div class="main_menu">
+                    <a href="./stock.html" class="menu-button">종목</a>
+                    <a href="./machine.html" class="menu-button">머신러닝 모델</a>
+                    <a href="./deep.html" class="menu-button">딥러닝 모델</a>
+                    <button class="menu-button" id="autoTradingBtn">자동매매</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="divide_line"></div>
+        <div class="container-xxl bg-white p-0">
+
+            <!-- 첫 번째 검색 바. 이 부분은 자바스크립트로 컨트롤하지 않습니다. -->
+            <div class="search-bar">
+                <form id="search-form-1" class="d-flex" onsubmit="getStockContent();">
+                    <input type="text" id="search-input-1" class="form-control" placeholder="검색할 종목을 입력하세요">
+                    <button type="submit" id="search-button-1" class="btn btn-primary"><i
+                            class="bi bi-search"></i></button>
+                </form>
+            </div>
+            <!-- 두 번째 검색 바. 이 부분만 자바스크립트로 컨트롤합니다. -->
+            <div class="search-code">
+                <form id="search-form-2" class="d-flex">
+                    <input type="text" id="search-input-2" class="form-control" placeholder="이 페이지에서 검색할 내용을 입력하세요."
+                        style="width: 300px;">
+                    <button type="submit" id="search-button-2" class="btn btn-primary"><i
+                            class="bi bi-search"></i></button>
+                </form>
+            </div>
+            <hr>
+
+            <div class="table-responsive">
+                <table id="data-table" class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>종목명</th>
+                            <th>종목코드</th>
+                            <th>거래일자</th>
+                            <th>종가</th>
+                            <th>시가</th>
+                            <th>고가</th>
+                            <th>저가</th>
+                            <th>거래량</th>
+                            <th>시가총액</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-body">
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="end_line"></div>
+        <div class="footer-container" style="display: flex; justify-content: center;">
+            <a href="../index.html" style="justify-content: center;">
+                <img src="./img/Hana.jpg" style="max-width: 300px; height: auto; margin-top: 20px; margin-left: 30px;">
+            </a>
+            <div class="locate" style="display: flex; flex-direction: column;">
+                <div style="margin-left:30px; margin-top: 15px;">
+                    <span style="margin-right: 15px;">서울특별시 중구 을지로 66 사업자 등록번호: 104-86-56659</span>
+                    <span style="margin-right: 15px;">대표이사 이호성</span>
+                    <span style="margin-right: 15px;">하나증권 고객센터: 1800-1111</span>
+                </div>
+                <span style="margin-left: 30px; float: left;">Copyright(c) 2018 KEB HANACARD. All Rights
+                    Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        function getStockContent() {
+            const name = $('#search-input-1').val();
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: 'http://localhost:8080/stock',
+                data: JSON.stringify({ name: name }),
+                dataType: 'json',
+                success: function (data) {
+                    $('#data-body').empty();
+                    data.forEach(function (stock) {
+                        let row = `<tr>
+                        <td>${stock.name}</td>
+                        <td>${stock.code}</td>
+                        <td>${new Date(stock.trading_day).toLocaleDateString()}</td>
+                        <td>${stock.close.toLocaleString()}</td>
+                        <td>${stock.open.toLocaleString()}</td>
+                        <td>${stock.high.toLocaleString()}</td>
+                        <td>${stock.low.toLocaleString()}</td>
+                        <td>${stock.volume.toLocaleString()}</td>
+                    <td>${stock.cap.toLocaleString()}</td>
+                    </tr>`;
+
+                        $('#data-body').append(row);
+                    });
+                },
+                error: function (e) {
+                    console.log("ERROR : ", e);
+                }
+            });
+        }
+
+        const searchForm = document.getElementById('search-form-2');
+        const searchInput = document.getElementById('search-input-2');
+        const dataTable = document.getElementById('data-table');
+
+        // 검색 이벤트 리스너 등록
+        searchForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const searchTerm = searchInput.value.trim().toLowerCase();
+            if (searchTerm === '') {
+                alert('검색어를 입력하세요.');
+                return;
+            }
+            filterTable(searchTerm);
+        });
+
+        function filterTable(searchTerm) {
+            const rows = dataTable.getElementsByTagName('tr');
+            let found = false;
+            for (let i = 1; i < rows.length; i++) {
+                const row = rows[i];
+                const cols = row.getElementsByTagName('td');
+                let display = 'none';
+                for (let j = 0; j < cols.length; j++) {
+                    const cell = cols[j];
+                    if (cell.textContent.toLowerCase().includes(searchTerm)) {
+                        display = '';
+                        found = true;
+                        break;
+                    }
+                }
+                row.style.display = display;
+            }
+            if (!found) {
+                alert('검색 결과가 없습니다.');
+            }
+        }
+    </script>
+    <script>
+        document.getElementById("autoTradingBtn").addEventListener("click", function () {
+            window.location.href = "http://localhost:3000/";
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+@import url("fonts.css");
+
+.login-button {
+    font-size: 14px;
+    font-family: "Hana2-Light";
+    border: none;
+    background-color: #ffffff;
+}

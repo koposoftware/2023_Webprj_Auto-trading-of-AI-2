@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>하나금융그룹</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        function filterTable() {
+            const name = $('#search-input').val();
+            console.log(name);
+            $.ajax({
+                type: 'POST',
+                contentType: 'application/json',
+                url: 'http://localhost:8080/machine',
+                data: JSON.stringify({ name: name }),
+                dataType: 'json',
+                success: function (data) {
+                    $('#table-body').empty();
+                    data.forEach(function (machinePredict) {
+                        let time = new Date(machinePredict.time);
+                        let year = time.getFullYear(); // get year
+                        let month = time.getMonth() + 1; // get month (0-11 so add 1)
+                        let date = time.getDate(); // get date
+
+                        // Ensure month and date are always 2-digits
+                        month = month < 10 ? '0' + month : month;
+                        date = date < 10 ? '0' + date : date;
+                        const predCloseValue = machinePredict.predClose !== null ? machinePredict.predClose.toLocaleString() : "X";
+                        const closeValue = machinePredict.close !== null ? machinePredict.close.toLocaleString() : "X";
+                        const diff = machinePredict.diff !== null ? 100 - machinePredict.diff : "X";
+
+                        let formattedTime = year + '-' + month + '-' + date;
+                        let row =
+                            `<tr>
+                    <td>${formattedTime}</td>
+                    <td>${machinePredict.name}</td>
+                    <td>${machinePredict.code}</td>
+                    <td>${predCloseValue}</td>
+                    <td>${closeValue}</td>
+                    <td>${diff}%</td>
+                </tr>`;
+                        console.log(`${machinePredict.name}`);
+                        $('#table-body').append(row);
+                    });
+                },
+                error: function (e) {
+                    console.log("ERROR : ", e);
+                }
+            });
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <div class="container-xxl bg-white p-0">
+        <!-- Spinner Start -->
+        <div id="spinner"
+            class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Header Start -->
+        <div class="renewal2021">
+            <div class="upper">
+                <ul class="link_crfix">
+                    <li class="item">기업뱅킹</li>
+                    <li class="item">하나증권</li>
+                    <li class="item">은행소개</li>
+                    <li class="item">채용안내</li>
+                </ul>
+            </div>
+
+            <div class="menu">
+                <a href="../index.html" style="justify-content: center;">
+                    <img src="./img/Hana.jpg"
+                        style="max-width: 300px; height: auto; margin-top: 20px; margin-left: 30px;">
+                </a>
+
+                <div class="main_menu">
+                    <a href="./stock.html" class="menu-button">종목</a>
+                    <a href="./machine.html" class="menu-button">머신러닝 모델</a>
+                    <a href="./deep.html" class="menu-button">딥러닝 모델</a>
+                    <button class="menu-button" id="autoTradingBtn">자동매매</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="divide_line"></div>
+        <div class="container-xxl bg-white p-0">
+            <div class="d-flex search-bar">
+                <form id="search-form" class="d-flex align-items-center" onsubmit="filterTable();">
+                    <input type="text" id="search-input" class="form-control" placeholder="검색할 종목을 입력하세요">
+                    <button type="submit" id="search-button" class="btn btn-primary"><i
+                            class="bi bi-search"></i></button>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>종목이름</th>
+                        <th>종목코드</th>
+                        <th>예측종가</th>
+                        <th>실제종가</th>
+                        <th>정확도</th>
+                    </tr>
+                </thead>
+                <tbody id="table-body">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer>
+        <div class="end_line"></div>
+        <div class="footer-container" style="display: flex; justify-content: center;">
+            <a href="../index.html" style="justify-content: center;">
+                <img src="./img/Hana.jpg" style="max-width: 300px; height: auto; margin-top: 20px; margin-left: 30px;">
+            </a>
+            <div class="locate" style="display: flex; flex-direction: column;">
+                <div style="margin-left:30px; margin-top: 15px;">
+                    <span style="margin-right: 15px;">서울특별시 중구 을지로 66 사업자 등록번호: 104-86-56659</span>
+                    <span style="margin-right: 15px;">대표이사 이호성</span>
+                    <span style="margin-right: 15px;">하나증권 고객센터: 1800-1111</span>
+                </div>
+                <span style="margin-left: 30px; float: left;">Copyright(c) 2018 KEB HANACARD. All Rights
+                    Reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+
+
+    <script>
+        // 날짜 선택 이벤트 리스너 등록
+        const dateSelect = document.getElementById('date-select');
+        dateSelect.addEventListener('change', updateTable);
+
+        // 검색 이벤트 리스너 등록
+        // const searchForm = document.getElementById('search-form');
+        // searchForm.addEventListener('submit', function (e) {
+        //     e.preventDefault();
+        //     const searchTerm = document.getElementById('search-input').value.trim().toLowerCase();
+        //     filterTable(searchTerm);
+        // });
+
+
+        document.getElementById('search-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+            filterTable();
+        });
+    </script>
+    <script>
+        document.getElementById("autoTradingBtn").addEventListener("click", function () {
+            window.location.href = "http://localhost:3000/";
+        });
+    </script>
+</body>
+
+</html>

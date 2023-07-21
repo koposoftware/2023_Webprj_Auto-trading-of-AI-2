@@ -1,0 +1,40 @@
+.legend-container {
+  width: 250px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.legend {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  font-family: "Hana2-CM";
+  font-size: 14px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 8px;
+}
+.legend-badge {
+  width: 30px;
+  height: 15px;
+  border: 3px solid #eff0f6;
+  border-radius: 15px;
+  margin-right: 10px;
+}
+.legend-first {
+  background-color: #00857f;
+}
+.legend-second {
+  background-color: #32b09d;
+}
+.legend-third {
+  background-color: #6bd3cc;
+}
+.legend-fourth {
+  background-color: #7eeb96;
+}
+.legend-fivth {
+  background-color: #10d93c;
+}

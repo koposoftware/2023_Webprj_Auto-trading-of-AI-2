@@ -1,0 +1,138 @@
+@import url("fonts.css");
+
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.loginModal {
+  width: 560px;
+  height: 450px;
+  background-color: white;
+  position: relative;
+  box-sizing: border-box;
+  margin: 50px auto;
+  /* padding: 20px; */
+  background: #fff;
+  border: 1px solid #009591;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.close {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0px;
+  left: 20px;
+}
+
+.modalContents {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
+}
+
+.signinIcon {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.input-form {
+  border-radius: 20px;
+  width: 350px;
+  height: 55px;
+  border: 1px solid #009591;
+  outline: none;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: "Hana2-Light";
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+input::placeholder {
+  color: #999999;
+}
+
+.loginPw {
+  border-radius: 20px;
+  margin-top: 15px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid #009591;
+  padding: 9px 12px;
+  outline: none;
+  box-sizing: border-box;
+  font-family: "Hana2-Light";
+  font-size: 14px;
+}
+
+.loginMid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.autoLogin {
+  font-size: 12px;
+  color: #8d8d8d;
+  line-height: 3;
+}
+
+.loginBtn {
+  width: 350px;
+  height: 55px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #009591;
+  color: #ffffff;
+  border: none;
+  font-family: "Hana2-Bold";
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.social-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.kakaoLogo {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.googleLogo {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.loginEnd {
+  text-align: center;
+  font-size: 11px;
+}
+
+.noUser {
+  text-decoration: underline;
+}
