@@ -1,5 +1,3 @@
-https://frontend-beryl-phi.vercel.app/main
-
 # 과목명 - AI 주식 자동매매
 
 주식 자동 매매를 위한 AI 기반 웹 개발 프로젝트 과목입니다.
